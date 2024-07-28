@@ -7,22 +7,22 @@
     @csrf
     <div class="mb-3">
         <label for="name" class="form-label">Tên sản phẩm</label>
-        <input type="text" class="form-control" id="name" name="name" value="">
+        <input type="text" class="form-control" id="name" name="ten" value="">
        
     </div>
     <div class="mb-3">
         <label for="quantity" class="form-label">Số lượng tồn</label>
-        <input type="number" class="form-control" id="quantity" name="quantity" value="">
+        <input type="number" class="form-control" id="quantity" name="so_luong_ton" value="">
         
     </div>
     <div class="mb-3">
         <label for="price" class="form-label">Giá bán</label>
-        <input type="text" class="form-control" id="price" name="price" value="">
+        <input type="text" class="form-control" id="price" name="gia_ban" value="">
         
     </div>
     <div class="mb-3">
         <label for="description" class="form-label">Mô tả</label>
-        <textarea class="form-control" id="description" name="description" rows="3"></textarea>
+        <textarea class="form-control" id="description" name="mo_ta" rows="3"></textarea>
         
     </div>
     <div class="mb-3">

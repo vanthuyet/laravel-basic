@@ -4,6 +4,16 @@
 @endsection
 @section('content')
     <a class="btn btn-success my-3" href="{{ route('products.create') }}">Thêm sản phẩm</a>
+    @if (isset($_SESSION['success']))
+        <div class="alert alert-success">
+            {{ $_SESSION['success'] }}
+        </div>
+
+        @php
+            unset($_SESSION['success']);
+        @endphp
+    @endif
+
     <table class="table">
         <thead>
             <tr>
@@ -27,7 +37,11 @@
                     <td>
                         <a class="btn btn-info" href="{{ route('products.show', $item->id) }}">Chi tiết</a>
                         <a class="btn btn-warning" href="{{ route('products.edit', $item->id) }}">Sửa</a>
-                        <a class="btn btn-danger" href="{{ route('products.destroy', $item->id) }}">Xoá</a>
+                        <form action="{{ route('products.destroy', $item->id) }}" method="POST" class="d-inline">
+                            @csrf
+                            @method('DELETE')
+                            <button  type="submit" class="btn btn-danger ">Xoá</button>
+                        </form>
                     </td>
                 </tr>
             @endforeach

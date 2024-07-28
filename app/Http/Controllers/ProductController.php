@@ -31,16 +31,19 @@ class ProductController extends Controller
    
     public function store(Request $request ,StoreProductRequest $requestStore)
     {
+        
         $rules = $requestStore->rules();
         Product::query()->create($request->validate($rules));
         
-        return view('admin.product.index');
+        return redirect()->route('products.index')->with('success', 'Thêm sản phẩm thành công');
     }
 
   
     public function show(string $id)
     {
-        //
+       $product = Product::query()->find($id);
+
+       return view('admin.product.show', compact('product'));
     }
 
    
@@ -58,6 +61,8 @@ class ProductController extends Controller
     
     public function destroy(string $id)
     {
-        
+        $product = Product::query()->find($id);
+        $product->delete();
+        return redirect()->route('products.index')->with('success', 'Xoá sản phẩm thành công');
     }
 }
