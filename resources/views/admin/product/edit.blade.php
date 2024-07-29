@@ -1,6 +1,6 @@
 @extends('admin.layout.master')
 @section('title')
-    Thêm mới sản phẩm
+    Chỉnh sửa sản phẩm
 @endsection
 @section('content')
 <form action="{{route('products.store')}}" method="POST">

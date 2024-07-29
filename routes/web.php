@@ -4,7 +4,7 @@ use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\Homecontroller;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ProductController;
-use App\Http\Controllers\SupllierController;
+use App\Http\Controllers\SupplierController;
 use App\Models\Products;
 use Illuminate\Support\Facades\Route;
 
@@ -24,7 +24,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/admin', [Homecontroller::class, 'index']);
 Route::resource('/admin/products',ProductController::class);
 Route::resource('/admin/customers',CustomerController::class);
-Route::resource('/admin/suplliers',SupllierController::class);
+Route::resource('/admin/suplliers',SupplierController::class);
 Route::resource('/admin/orders',OrderController::class);
 
 

@@ -4,24 +4,10 @@
         <div class="dropdown">
             <a href="" class="btn btn-outline-success">Trang chủ</a>
 
-            <button class="btn btn-outline-info dropdown-toggle mt-3" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Trang sản phẩm 
-            </button>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">Action</a></li>
-              <li><a class="dropdown-item" href="#">Another action</a></li>
-              <li><a class="dropdown-item" href="#">Something else here</a></li>
-            </ul>
+            <a class="btn btn-outline-primary mt-3" href="{{ route("products.index")}}"><i class="fa-brands fa-product-hunt"></i> Quản lí sản phẩm</a>
+
+            <a class="btn btn-outline-primary mt-3" href="{{ route("suplliers.index")}}">Quản lí nhà cung cấp</a>
           </div>
 
-          <div class="dropdown mt-3">
-            <button class="btn btn-outline-info dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Khách hàng
-            </button>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">Action</a></li>
-              <li><a class="dropdown-item" href="#">Another action</a></li>
-              <li><a class="dropdown-item" href="#">Something else here</a></li>
-            </ul>
-          </div>
+          
     </div>

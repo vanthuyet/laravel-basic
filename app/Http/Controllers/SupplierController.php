@@ -2,16 +2,21 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use App\Models\Supplier;
+use App\Http\Requests\StoreSupplierRequest;
+use App\Http\Requests\UpdateSupplierRequest;
 
-class SupllierController extends Controller
+class SupplierController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        //
+        $suppliers = Supplier::query()->get();
+        return view('admin.supplier.index', [
+            'suppliers' => $suppliers,
+        ]);
     }
 
     /**
@@ -19,15 +24,15 @@ class SupllierController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.supplier.create');
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(StoreSupplierRequest $request)
     {
-        //
+        
     }
 
     /**
@@ -35,13 +40,15 @@ class SupllierController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $supplier = Supplier::query()->find($id);
+
+       return view('admin.supplier.show', compact('supplier'));
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(Supplier $supplier)
     {
         //
     }
@@ -49,7 +56,7 @@ class SupllierController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(UpdateSupplierRequest $request, Supplier $supplier)
     {
         //
     }
@@ -57,7 +64,7 @@ class SupllierController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(Supplier $supplier)
     {
         //
     }
